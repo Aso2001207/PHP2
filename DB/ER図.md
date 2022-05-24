@@ -67,6 +67,7 @@ entity "個人情報マスタ" as m_personal_info <m_personal_info> <<M,MASTER_M
 + user_code [PK][NN]
 --
 name
+pass
 mail
 address
 tel
@@ -78,65 +79,69 @@ del_flg
 }
 
 
-entity "カテゴリマスタ" as m_category <m_category> <<M,MASTER_MARK_COLOR>>{
-+ category_id[PK][NN]
+entity "管理者" as m_Administrator <m_Administrator> <<M,MASTER_MARK_COLOR>>{
++ user_code[PK][NN]
 --
 name
-reg_date
+pass
+mail
+address
+tel
+del_flg
 
 }
 
-entity "お気に入りマスタ" as m_favorite <m_category> <<M,MASTER_MARK_COLOR>>{
-+ favorite_id[PK][NN]
+entity "休憩マスタ" as m_break_time <m_break_time> <<M,MASTER_MARK_COLOR>>{
++ br_code[PK][NN]
 + 
 --
-customaer_id
-item_code
-del_flag
+work_divi
+br_time
 
 }
 
 
 
 
-entity "商品マスタ" as m_items <m_items><<M,MASTER_MARK_COLOR>>{
-+ item_code[PK]
+entity "作業マスタ" as m_work <m_work><<M,MASTER_MARK_COLOR>>{
++ work_code[PK][NN]
 --
-item_name
-price
-category_id
-image
-detail
-del_flag
-reg_date
+work_name
+work_con
 
 }
-entity "履歴テーブル" as d_history <d_history><<T,TEBUE_MARK_COLOR>>{
-+ history_id[PK][NN]
+entity "給料マスタ" as m_salary <m_salary><<M,MASTER_MARK_COLOR>>{
++ sal_code[PK][NN]
 --
-customer_id
-item_name
-image
-price
-num
-purchase_date
-del_flg
+work_code
+time_code
+hour_wage
+divi_sal
 }
 
+entity "作業時間範囲マスタ" as m_working_time_range <m_working_time_range><<M,MASTER_MARK_COLOR>>{
++ time_code[PK][NN]
+--
+time_ran
+
+}
+
+m_personal_info ------o{ d_work_history
+m_personal_info ----|{ d_shift
+m_personal_info ||----|| m_Administrator
+m_personal_info }|------ m_work
+d_shift ||----|| m_Administrator
+d_shift ------|{ m_break_time
+d_shift }|------ m_work
+d_shift ||----|| d_work_history
+d_shift }|------ m_working_time_range
+m_work ------|{ m_salary
+m_salary }|------ m_working_time_range
 
 
 
 
-d_purchase }o--o| m_customers 
- d_purchase_detail }|--|| d_purchase
- m_items }o--|| m_category
- m_favorite }o-- m_customers
- m_favorite }o-- m_items
- d_history ||--|| d_purchase
- d_history ||--|| d_purchase_detail
- d_history }|--o{ m_customers
- d_history }o--o{ m_favorite
- d_history }o--|{ m_items
+
 
 
 
