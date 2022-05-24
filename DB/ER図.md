@@ -126,17 +126,17 @@ time_ran
 
 }
 
-m_personal_info ------o{ d_work_history
-m_personal_info ----|{ d_shift
-m_personal_info ||----|| m_Administrator
-m_personal_info }|------ m_work
-d_shift ||----|| m_Administrator
-d_shift ------|{ m_break_time
-d_shift }|------ m_work
-d_shift ||----|| d_work_history
-d_shift }|------ m_working_time_range
-m_work ------|{ m_salary
-m_salary }|------ m_working_time_range
+m_personal_info ----o{ d_work_history
+m_personal_info --|{ d_shift
+m_personal_info ||--|| m_Administrator
+m_personal_info }|---- m_work
+d_shift ||--|| m_Administrator
+d_shift ----|{ m_break_time
+d_shift }|---- m_work
+d_shift ||--|| d_work_history
+d_shift }|---- m_working_time_range
+m_work ----|{ m_salary
+m_salary }|---- m_working_time_range
 
 
 
