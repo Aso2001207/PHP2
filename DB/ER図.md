@@ -126,7 +126,7 @@ time_ran
 
 }
 
-m_personal_info ------o{ d_work_history
+m_personal_info ----ri--o{ d_work_history
 m_personal_info ----|{ d_shift
 m_personal_info ||----|| m_Administrator
 m_personal_info }|------ m_work
