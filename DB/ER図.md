@@ -29,7 +29,7 @@ package "アテンダントマネジメントシステム" as target_system {
 user_id
 name
 date
-day_fo_week
+day_of_week
 work_code
 re_st_time
 re_en_time
@@ -49,7 +49,7 @@ entity "シフトテーブル" as d_shift <d_shift> <<T,TEBUE_MARK_COLOR>>{
 user_code
 name
 date
-day_fo_week
+day_of_week
 work_code
 st_time
 en_time
