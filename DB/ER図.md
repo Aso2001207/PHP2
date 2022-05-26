@@ -134,6 +134,7 @@ d_shift ---le-|{ m_break_time
 d_shift }|-ri-- m_work
 d_shift }|-do-- m_working_time_range
 m_work --do-|{ m_salary
+m_work --up-o{ d_work_history
 m_salary }|-le-- m_working_time_range
 
 
