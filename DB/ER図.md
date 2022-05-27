@@ -70,7 +70,6 @@ mail
 address
 tel
 hire_date
-work_date
 work_month
 del_flg
 
