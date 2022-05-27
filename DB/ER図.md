@@ -84,7 +84,6 @@ pass
 mail
 address
 tel
-del_flg
 
 }
 
