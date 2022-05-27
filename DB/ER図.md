@@ -130,7 +130,7 @@ m_personal_info --ri-o{ d_work_history
 m_personal_info --do-|{ d_shift
 m_personal_info ||-le-|| m_Administrator
 m_personal_info }|--- m_work
-d_shift ---le-|{ m_break_time
+d_shift }|-le--- m_break_time
 d_shift }|-ri-- m_work
 d_shift }|-do-- m_working_time_range
 m_work --do-|{ m_salary
