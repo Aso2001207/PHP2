@@ -46,7 +46,6 @@ entity "シフトテーブル" as d_shift <d_shift> <<T,TEBUE_MARK_COLOR>>{
 + shift_code[PK][NN]
 --
 user_code
-name
 date
 work_code
 st_time
@@ -66,7 +65,6 @@ entity "個人情報マスタ" as m_personal_info <m_personal_info> <<M,MASTER_M
 --
 name
 pass
-mail
 address
 tel
 hire_date
@@ -81,7 +79,6 @@ entity "管理者" as m_Administrator <m_Administrator> <<M,MASTER_MARK_COLOR>>{
 --
 name
 pass
-mail
 address
 tel
 
