@@ -60,7 +60,7 @@ del_flg
 
 
 
-entity "個人情報マスタ" as m_personal_info <m_personal_info> <<M,MASTER_MARK_COLOR>>{
+entity "従業員マスタ" as m_personal_info <m_personal_info> <<M,MASTER_MARK_COLOR>>{
 + user_code [PK][NN]
 --
 name
